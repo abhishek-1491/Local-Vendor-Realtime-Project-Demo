@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>मोरेशाही मिसळ आणि भेळ</title>
+    <script src="https://kit.fontawesome.com/35821647e0.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="images/favicon.jpeg" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var map = L.map('map').setView([18.4624805,73.8871084], 13); // Default India center
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var lat = position.coords.latitude;
+                var lon = position.coords.longitude;
+                var userLocation = [lat, lon];
+                
+                map.setView(userLocation, 15);
+                L.marker(userLocation).addTo(map)
+                    .bindPopup("You are here!").openPopup();
+            }, function (error) {
+                console.error("Error getting location: ", error);
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    });
+</script>
+    <script src="script.js"></script>
+    <style>
+        #map{
+            width: 100%;
+            height: 100%;
+            /* background-color: red; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="main-container">
+            <nav>
+                <div class="row logo">
+                    <a href="#"><img src="images/LOGO.jpg" alt=""></a>
+                </div>
+
+                <div class="row menu"><u id="menu-icon" onclick="menuBar()">Menu</u></div>
+                <div class="menu-bar" id="menu-bar">
+                    <u id="close" onclick="closeMenu()">Close</u>
+                    <div>
+                        <li>Index</li>
+                        <li>About Us</li>
+                        <li>Products</li>
+                        <li>Franchise</li>
+                        <li>Gallery</li>
+                    </div>
+                </div>
+                <div class="row nav-items">
+
+                    <li>Index</li>
+                    <li>About Us</li>
+                    <li>Products</li>
+                    <li>Franchise</li>
+                    <li>Gallery</li>
+
+
+                    <button onclick="contactForm()">Contact For Franchise</button>
+                </div>
+            </nav>
+            <div class="card-container2">
+                <img src="images/LOGO-removebg-preview (1).png" alt="">
+                <h2>Delicious experiance with <br> Moreshahi Misal</h2>
+                <p>Come with family and take mouth-watering <br> experiance with us!</p>
+                <br><br>
+                <button>Explore Franchise</button>
+            </div>
+            <div class="card-container">
+                <div class="card card-item1">
+                    <h2>मिसळ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;😋</h2>
+                </div>
+                <div class="card card-item2">
+                    <h2>मसाला ताक &nbsp; &nbsp; &nbsp; 😋</h2>
+                </div>
+                <div class="card card-item3">
+                    <h2>स्पेशल भेळ &nbsp; &nbsp; &nbsp; &nbsp; 😋</h2>
+                </div>
+                <div class="card card-item4">
+                    <h2>सोलकढी &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 😋</h2>
+                </div>
+                <div class="card card-item5">
+                    <h2>स्पेशल मिसळ &nbsp; &nbsp; 😋</h2>
+                </div>
+                <img src="images/LOGO-removebg-preview (1).png" alt="">
+            </div>
+
+        </div>
+        <div class="about2">
+            <div class="about2-content">
+                <h2>At Moreshahi Misal</h2>
+                <br><br>
+                <p> At Moreshahi Misal, we're honored to bring you the real taste
+                    of Misal from the heart of Maharashtra. Our story started with [Anyone Name],
+                    a passionate food lover and proud Maharashtrian. His dream was simple
+                    yet profound - to create a place where the delicious scent of Misal
+                    brings back cherished memories of family and <br>childhood.</p>
+                <br><br><button>Explore Franchise</button>
+            </div>
+        </div>
+        <div id="about">
+            <div class="listBG">
+                <img src="images/listItemBG2.png" alt="">
+            </div>
+            <div class="list-items-card">
+                <div class="list-items">
+                    <li>स्पेशल मिसळ</li>
+                    <li>स्पेशल भेळ</li>
+                    <li>कॉफी / चाय</li>
+                    <li>सोलकढी</li>
+                </div>
+            </div>
+            <div class="content-block">
+                <div class="about-content">
+                    <span class="name"><b>At Moreshahi Misal</b></span>
+                    <p>
+
+                        <br>
+                        At Moreshahi Misal, we're honored to bring you the real taste
+                        of Misal from the heart of Maharashtra. Our story started with [Anyone Name],
+                        a passionate food lover and proud Maharashtrian. His dream was simple
+                        yet profound - to create a place where the delicious scent of Misal
+                        brings back cherished memories of family and childhood.
+                    </p>
+                    <button>See Our Franchise</button>
+                </div>
+            </div>
+        </div>
+        <div class="experiance2">
+
+        </div>
+        <div class="experiance">
+            <div class="ex-images">
+                <div>
+                    <img src="images/image1.webp" id="one" alt="">
+                    <img src="images/image2.webp" id="two" alt="">
+                    <img src="images/image3.webp" id="three" alt="">
+                </div>
+            </div>
+            <div class="experiance-content">
+                <div>
+                    <h1>Delicious Experiance</h1>
+                    <p>
+                        At Moreshahi Misal, we invite you to savour the true taste of
+                        Maharashtra with our signature dishes. Our Special Misal is a
+                        flavourful blend of sprouted lentils and spices, creating a
+                        deliciously authentic experiance. Moreshahi Misal is more than a meal;
+                        it's a journey into the heart of Maharashtra's street food legacy,
+                        where every bite tells a tale of tradition and joy.
+                    </p><br><br><br>
+                    <button>Visit Near-by Store</button>
+                </div>
+            </div>
+        </div>
+        <div class="other-products">
+            <h1>Other Products</h1>
+            <span>Farsan, Chivda, Special Bhel ...</span>
+            <div id="products-items">
+                <div class="product-card">
+                    <div class="p-image">
+                        <div><img src="images/product1-removebg-preview.png" alt=""></div>
+                    </div>
+                    <div class="p-title">
+                        <div id="sub-title"><span>Matki Bhel</span></div>
+                        <div class="tasty-symbol">😋</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="p-image">
+                        <div><img src="images/product2-removebg-preview.png" alt=""></div>
+
+                    </div>
+                    <div class="p-title">
+                        <div id="sub-title"><span>Special Farsan</span></div>
+                        <div class="tasty-symbol">😋</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="p-image">
+                        <div><img src="images/product3-removebg-preview.png" alt=""></div>
+
+                    </div>
+                    <div class="p-title">
+                        <div id="sub-title"><span>Misal Farsan</span></div>
+                        <div class="tasty-symbol">😋</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="locations">
+            <h1>Our Presence</h1>
+            <span>Spreading the Aroma of Tradition ...</span>
+
+            <div class="loc-cards">
+                <div id="odd"></div>
+                <div id="even"></div>
+                <div id="odd"></div>
+                <div id="even"></div>
+            </div>
+            <img src="images/New folder/kalmi.jpeg" alt="">
+            <button>See Our Franchise</button>
+        </div>
+        <div class="moments">
+            <div>
+                <h1>Captured Moments</h1>
+            </div>
+            <span>Moments Frozen in Flavor ...😋</span>
+            <div class="moments-gallery">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <button>Visit Gallery</button>
+            <img src="images/rose-removebg-preview.png">
+
+        </div>
+        <div class="parcel">
+            <div class="parcel-items">
+                <div class="parcel-name">
+                    <h1>Order Online on <br> Swiggy & Zomato.</h1>
+                    <button id="swiggy">Swiggy</button>
+                    <button id="zomato">Zomato</button>
+                </div>
+                <div class="parcel-image">
+                    <img src="images/swiggy.webp" class="swiggy">
+                    <img src="images/zomato.webp" class="zomato">
+                </div>
+            </div>
+        </div>
+        <div class="contact-us">
+            <div class="contact-details">
+                <h1>Contact Us</h1>
+                <p><i class="fa-solid fa-phone-volume"></i> +91-9527974938 </p>
+                <p><i class="fa-regular fa-envelope"></i> abhishek@gmail.com</p>
+                <p><i class="fa-solid fa-map-pin" style="padding-right: 10px;"></i> Moreshahi Misal, Kondhwa, Pune
+                    412105.</p>
+            </div>
+            <div id="map"></div>
+        </div>
+        <footer>
+            <img src="images/LOGO-removebg-preview (1).png" alt="">
+            <span>
+                <p>Privacy Policy | Follow us on...</p>
+                <div>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </span>
+            <hr>
+            <p id="footer">Copyright © 2025 Moreshahi Misal - Franchise Opportunity in India | Designed and Maintained
+                by <b>ABHISHEK HINGMIRE</b> .</p>
+        </footer>
+    </div>
+    <div class="form" id="form">
+        <div class="form-container">
+            <p>Get Your Own Franchise</p>
+            <label for="name">Your Name</label><br>
+            <input type="text"><br>
+            <label for="phone">Phone</label><br>
+            <input type="number"><br>
+            <label for="email">Your email</label><br>
+            <input type="email"><br>
+            <label for="residential-address">Residential Address</label><br>
+            <textarea cols="30" rows="3"></textarea><br>
+            <label for="proposed-outlet-address">Proposed Outlet Address</label><br>
+            <textarea cols="30" rows="3"></textarea><br>
+            <label for="message">Your message</label><br>
+            <textarea cols="30" rows="3"></textarea><br>
+            <br>
+            <button>Submit</button>
+            <div class="close"><a href="" onclick="close()">Close</a></div>
+        </div>
+    </div>
+    
+</body>
+
+
+</html>
